@@ -6,13 +6,13 @@ const secondsE1 = document.getElementById('seconds');
 
 
 
-const newYears = '1 Jan 2024';
+const newYears = '30 Apr 2024';
 
 function countdown(){
     const newYearsDate = new Date(newYears);
     const currentDate = new Date();
 
-    const totalseconds = (newYearsDate - currentDate)/1000
+    const totalseconds = (newYearsDate - currentDate)/1000 //convert days from milliseconds to seeconds after the difference
     const days = Math.floor(totalseconds/3600/24);
     const hours = Math.floor(totalseconds/3600) % 24;
     const mins = Math.floor(totalseconds/60) % 60;
@@ -20,18 +20,27 @@ function countdown(){
 
     
     daysE1.innerHTML = (days);
-    hoursE1.innerHTML = formaTime(hours);
-    minsE1.innerHTML = formaTime(mins);
-    secondsE1.innerHTML = formaTime(seconds);
+    hoursE1.innerHTML = (hours);
+    minsE1.innerHTML = (mins);
+    secondsE1.innerHTML = (seconds);
 }
 
-function formaTime(time){
-    return time < 5 ? time: time ;
-}
+
 //initial call
 countdown();
 
-setInterval(countdown, 1000);
+setInterval(countdown, 1000); // to update the countdown time every seconds (1000 millisecons)
 
+/*
+Dates in JavaScript are typically represented in milliseconds
+By dividing by 1000, we convert the time difference from milliseconds to seconds.
 
+1jr ------> 24 * 3600s
+days?? ------> totalseconds
 
+1hr ------> 3600s
+hrs?? ------> totalseconds
+
+1 min ------> 60s
+mins?? ------> totalseconds
+*/
