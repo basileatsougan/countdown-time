@@ -3,9 +3,6 @@ const hoursE1 = document.getElementById('hours');
 const minsE1 = document.getElementById('mins');
 const secondsE1 = document.getElementById('seconds');
 
-
-
-
 const newYears = '30 Apr 2024';
 
 function countdown(){
@@ -30,6 +27,7 @@ function countdown(){
 countdown();
 
 setInterval(countdown, 1000); // to update the countdown time every seconds (1000 millisecons)
+
 
 /*
 Dates in JavaScript are typically represented in milliseconds
